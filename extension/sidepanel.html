@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ContextFlow</title>
+    <link rel="stylesheet" href="ext.css" />
+  </head>
+  <body class="panel">
+    <header class="top">
+      <div class="brand">
+        <span class="kicker">Расширение</span>
+        <h1>Библиотека</h1>
+      </div>
+    </header>
+    <div class="block">
+      <label class="lbl" for="profile">Контекст-профиль</label>
+      <div class="row">
+        <select id="profile"></select>
+        <button type="button" id="edit-profile" class="icon" title="Изменить профиль">Изм.</button>
+      </div>
+      <label class="check"><input id="attach" type="checkbox" /> Подклеивать профиль к промпту</label>
+      <label class="check"><input id="launcher" type="checkbox" /> Кнопка / на странице чата</label>
+    </div>
+    <div class="tabs">
+      <button type="button" id="tab-prompts" class="on">Промпты</button>
+      <button type="button" id="tab-profiles">Профили</button>
+    </div>
+    <section id="prompts-view" class="view">
+      <input id="search" type="search" placeholder="Имя, слаг или тег" />
+      <div id="folders" class="folders"></div>
+      <div id="list" class="list"></div>
+    </section>
+    <section id="profiles-view" class="view" hidden>
+      <div id="plist" class="list"></div>
+    </section>
+    <footer class="foot">
+      <button type="button" id="create" class="primary">Новый промпт</button>
+      <button type="button" id="export" class="ghost">Экспорт</button>
+      <button type="button" id="import" class="ghost">Импорт</button>
+      <button type="button" id="paste" class="linkish">Вставить JSON</button>
+      <input id="file" type="file" accept="application/json,.json" hidden />
+    </footer>
+    <p id="status" class="status"></p>
+
+    <dialog id="editor">
+      <form class="dialog" id="editor-form">
+        <h2 id="editor-title">Промпт</h2>
+        <label class="lbl">Название<input id="f-name" type="text" required /></label>
+        <div id="prompt-only">
+          <label class="lbl">Папка<select id="f-folder"></select></label>
+          <label class="lbl">Слаг<input id="f-slug" type="text" /></label>
+          <label class="lbl">Теги через запятую<input id="f-tags" type="text" /></label>
+        </div>
+        <label class="lbl">Текст<textarea id="f-text" required></textarea></label>
+        <div class="actions">
+          <button type="button" id="editor-cancel" class="ghost">Отмена</button>
+          <button type="submit" class="use">Сохранить</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="vars">
+      <form class="dialog" id="vars-form">
+        <h2 id="vars-title">Переменные</h2>
+        <p>Пустые переменные останутся в тексте.</p>
+        <div id="var-fields"></div>
+        <pre id="var-preview"></pre>
+        <div class="actions">
+          <button type="button" id="vars-cancel" class="ghost">Отмена</button>
+          <button type="submit" class="use">Вставить</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="json">
+      <form class="dialog" id="json-form">
+        <h2>Импорт JSON</h2>
+        <textarea id="json-text" placeholder="Вставьте бэкап ContextFlow"></textarea>
+        <div class="actions">
+          <button type="button" id="json-cancel" class="ghost">Отмена</button>
+          <button type="submit" class="use">Загрузить</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="shared.js"></script>
+    <script src="sidepanel.js"></script>
+  </body>
+</html>

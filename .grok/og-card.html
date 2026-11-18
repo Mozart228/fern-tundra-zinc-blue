@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+  @font-face {
+    font-family: Brand;
+    src: url("file:///usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf");
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: Brand;
+    src: url("file:///usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    background: #0E1116;
+  }
+  .stage {
+    width: 1200px;
+    height: 630px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background:
+      radial-gradient(ellipse 62% 48% at 50% 40%, rgba(228, 160, 74, 0.18), transparent 64%),
+      #0E1116;
+    font-family: Brand, "Liberation Sans", sans-serif;
+    color: #EBE7DF;
+  }
+  .stage::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(235, 231, 223, 0.045) 0.7px, transparent 0.7px);
+    background-size: 4px 4px;
+    pointer-events: none;
+  }
+  .slash-ghost {
+    position: absolute;
+    right: 72px;
+    top: 86px;
+    width: 180px;
+    height: 280px;
+    pointer-events: none;
+  }
+  .lockup {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mark {
+    width: 58px;
+    height: 58px;
+    border-radius: 14px;
+    background: #161B22;
+    box-shadow: 0 0 0 1px rgba(235, 231, 223, 0.08), 0 16px 40px rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+  }
+  .title {
+    font-weight: 700;
+    font-size: 122px;
+    letter-spacing: -0.045em;
+    line-height: 0.92;
+    color: #EBE7DF;
+  }
+  .rule {
+    width: 168px;
+    height: 4px;
+    border-radius: 4px;
+    background: #E4A04A;
+    margin-top: 18px;
+  }
+  .tag {
+    margin-top: 16px;
+    font-weight: 400;
+    font-size: 28px;
+    letter-spacing: 0.01em;
+    color: #E4A04A;
+  }
+  .menu {
+    position: relative;
+    z-index: 1;
+    margin-top: 32px;
+    width: 520px;
+    background: #161B22;
+    border-radius: 18px;
+    padding: 8px;
+    box-shadow:
+      0 0 0 1px rgba(235, 231, 223, 0.07),
+      0 28px 70px rgba(0, 0, 0, 0.45);
+  }
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    height: 46px;
+    padding: 0 14px;
+    border-radius: 12px;
+    color: rgba(235, 231, 223, 0.72);
+    font-size: 20px;
+    font-weight: 400;
+  }
+  .row.on {
+    background: rgba(228, 160, 74, 0.16);
+    color: #EBE7DF;
+  }
+  .cmd {
+    font-weight: 700;
+    color: #E4A04A;
+    width: 132px;
+    flex: none;
+    letter-spacing: -0.02em;
+  }
+  .row.on .cmd { color: #E4A04A; }
+  .desc { flex: 1; }
+  .kbd {
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: rgba(235, 231, 223, 0.45);
+    border: 1px solid rgba(235, 231, 223, 0.14);
+    border-radius: 6px;
+    padding: 3px 7px;
+  }
+  .row.on .kbd { color: #EBE7DF; border-color: rgba(228, 160, 74, 0.45); }
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="slash-ghost" aria-hidden="true">
+      <svg viewBox="0 0 180 280" width="180" height="280" fill="none">
+        <path d="M148 8 32 272" stroke="rgba(228,160,74,0.10)" stroke-width="28" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="lockup">
+      <div class="mark" aria-hidden="true">
+        <svg width="30" height="30" viewBox="0 0 32 32" fill="none">
+          <path d="M22 4.5 10 27.5" stroke="#E4A04A" stroke-width="5.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="title">ContextFlow</div>
+      <div class="rule"></div>
+      <div class="tag">Saved prompts. One slash.</div>
+    </div>
+    <div class="menu" aria-hidden="true">
+      <div class="row on">
+        <span class="cmd">/weekly</span>
+        <span class="desc">Recap the thread</span>
+      </div>
+      <div class="row">
+        <span class="cmd">/rewrite</span>
+        <span class="desc">Tighten the draft</span>
+      </div>
+      <div class="row">
+        <span class="cmd">/explain</span>
+        <span class="desc">Plain language</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

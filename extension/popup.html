@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ContextFlow</title>
+    <link rel="stylesheet" href="ext.css" />
+  </head>
+  <body class="popup">
+    <header class="top">
+      <div class="brand">
+        <span class="kicker">ContextFlow</span>
+        <h1>Быстрая вставка</h1>
+      </div>
+      <button type="button" id="open-panel" class="ghost">Панель</button>
+    </header>
+    <div class="block">
+      <label class="lbl" for="profile">Контекст-профиль</label>
+      <select id="profile"></select>
+      <input id="search" type="search" placeholder="Поиск промпта" />
+    </div>
+    <div id="list" class="popup-list"></div>
+    <div id="vars" class="block" hidden>
+      <div id="var-fields"></div>
+      <div class="row">
+        <button type="button" id="vars-cancel" class="ghost wide">Отмена</button>
+        <button type="button" id="vars-go" class="use">Вставить</button>
+      </div>
+    </div>
+    <p id="status" class="status"></p>
+    <script src="shared.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

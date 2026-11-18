@@ -1,0 +1,82 @@
+@import "tailwindcss";
+@import "@fontsource/outfit/400.css";
+@import "@fontsource/outfit/500.css";
+@import "@fontsource/outfit/600.css";
+@import "@fontsource/outfit/700.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+
+@theme {
+  --font-sans: "Outfit", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --color-ink: #0e1116;
+  --color-panel: #161b22;
+  --color-raised: #1e2530;
+  --color-line: #2c3544;
+  --color-fg: #ebe7df;
+  --color-muted: #8d95a8;
+  --color-faint: #5c6578;
+  --color-amber: #e4a04a;
+  --color-amber-ink: #1a1206;
+  --color-mint: #3dbe8b;
+  --color-danger: #e26d6d;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  html,
+  body {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    background: var(--color-ink);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+}
+
+@keyframes cf-rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cf-rise {
+  animation: cf-rise 180ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cf-rise {
+    animation: none;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 99px;
+}
+::selection {
+  background: color-mix(in srgb, var(--color-amber) 35%, transparent);
+}

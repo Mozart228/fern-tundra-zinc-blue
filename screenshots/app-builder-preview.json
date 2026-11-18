@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "ContextFlow",
+      "hasCanvas": false,
+      "bodyTextLen": 3089,
+      "bodyTextHash": "4c1c49029eee84228dee1427c6defea305741c7636bd4d104e60f1056a9422e6",
+      "bodyTextPrefix": "ContextFlow chatgpt.com ChatGPT Claude DeepSeek Qwen GigaChat Ge",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "ContextFlow",
+      "hasCanvas": false,
+      "bodyTextLen": 240,
+      "bodyTextHash": "be76e00152c67a92ad50a5cd9bcb69e4c238d0a4ba8c4f37c0f1be6948e24960",
+      "bodyTextPrefix": "ContextFlow ChatGPT Claude DeepSeek Qwen GigaChat Gemini ChatGPT",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
